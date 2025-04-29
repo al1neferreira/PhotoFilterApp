@@ -7,18 +7,22 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import com.codeapp.photofilterapp.data.MockPhotoFilterService
+import com.codeapp.photofilterapp.ui.MainScreen
 import com.codeapp.photofilterapp.ui.theme.PhotoFilterAppTheme
+import com.codeapp.photofilterapp.viewmodel.PhotoFilterViewModel
 
 class MainActivity : ComponentActivity() {
+
+    private val viewModel by lazy {
+        PhotoFilterViewModel(MockPhotoFilterService())
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            PhotoFilterAppTheme {
-                Surface(color = MaterialTheme.colorScheme.background) {
-                    Text("Hello PhotoFilterApp!")
-                }
-            }
+            MainScreen(viewModel)
         }
     }
 }
