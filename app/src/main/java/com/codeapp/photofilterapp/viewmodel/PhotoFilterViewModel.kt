@@ -14,10 +14,15 @@ class PhotoFilterViewModel(
     private val _filteredImageUrl = MutableStateFlow<String?>(null)
     val filteredImageUrl: StateFlow<String?> = _filteredImageUrl
 
+    private val _isLoading = MutableStateFlow(false)
+    val isLoading: StateFlow<Boolean> = _isLoading
+
     fun applyFilter(imageUrl: String) {
         viewModelScope.launch {
+            _isLoading.value = true
             val result = service.applyFilter(imageUrl)
             _filteredImageUrl.value = result
+            _isLoading.value = false
         }
     }
 }
