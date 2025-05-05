@@ -58,25 +58,27 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     // Compose BOM (Bill of Materials)
-    implementation (platform(libs.androidx.compose.bom.v20250401))
-    implementation (libs.ui)
-    implementation (libs.material3)
-    implementation (libs.ui.tooling.preview)
-    debugImplementation (libs.ui.tooling)
+    implementation(platform(libs.androidx.compose.bom.v20250401))
+    implementation(libs.ui)
+    implementation(libs.material3)
+    implementation(libs.ui.tooling.preview)
+    debugImplementation(libs.ui.tooling)
 
 // ViewModel + Compose
-    implementation (libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
 
 // Retrofit (para consumir APIs)
-    implementation (libs.retrofit)
-    implementation (libs.converter.gson)
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
 
 // Coil (carregar imagens na tela)
-    implementation (libs.coil.compose)
+    implementation(libs.coil.compose)
 
 // Coroutines (assíncrono)
-    implementation (libs.kotlinx.coroutines.android)
+    implementation(libs.kotlinx.coroutines.android)
 
-
-
+    //Retrpofit
+    implementation("com.squareup.retrofit2:retrofit:2.11.0")
+    implementation("com.squareup.retrofit2:converter.gson:2.9.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
 }
